@@ -40,7 +40,7 @@ function configurarTema() {
   });
 }
 
-// --- Funções de simulação de dados ---
+// --- Funções de simulação de dados(jogar no sql e vue)---
 function iniciarSimulacao() {
   atualizarDados();
   setInterval(atualizarDados, 5000);
