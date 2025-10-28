@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Monitoramento Ambiental</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly" async defer></script>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <h2>🌎 Painel</h2>
+    <nav>
+      <button data-tab="dashboard" class="ativo"><i class="fa-solid fa-gauge"></i> Dashboard</button>
+      <button data-tab="sensores" class="ativo"><i class="fa-solid fa-microchip"></i> Sensores</button>
+      <button data-tab="mapa" class="ativo"><i class="fa-solid fa-map"></i> Mapa</button>
+      <button data-tab="alertas" class="ativo"><i class="fa-solid fa-bell"></i> Alertas</button>
+      <button id="toggle-tema" class="ativo"><i class="fa-solid fa-moon"></i> Tema</button>
+    </nav>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <main id="conteudo">
+
+    <section id="dashboard" class="aba ativa">
+      <h1>Visão Geral</h1>
+      <div class="grid-cards">
+        <div class="card"><h3>🌡 Temperatura Média</h3><p id="tempAtual">-- °C</p></div>
+        <div class="card"><h3>💧 Umidade do Ar</h3><p id="umidadeAtual">-- %</p></div>
+        <div class="card"><h3>🔥 Focos de Calor</h3><p id="focosCalor">--</p></div>
+        <div class="card"><h3>📡 Sensores Ativos</h3><p id="sensoresOnline">--</p></div>
+      </div>
+      <p class="atualizacao">Última atualização: <span id="timestamp">--</span></p>
+    </section>
+
+    <section id="sensores" class="aba">
+      <h1>Sensores / Estações</h1>
+      <p>Listagem e status individual dos sensores.</p>
+    </section>
+
+    <section id="mapa" class="aba">
+      <h1>Mapa Interativo</h1>
+      <div id="map"></div>
+    </section>
+
+    <section id="alertas" class="aba">
+      <h1>Alertas e Notificações</h1>
+      <p>Lista de alertas ativos e resolvidos.</p>
+    </section>
+
+  </main>
+
+  <script src="assets/css/js/main.js"></script>
+</body>
+</html>

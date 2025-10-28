@@ -1,0 +1,128 @@
+:root {
+  --cor-fundo: #f5f7fa;
+  --cor-card: #fff;
+  --cor-texto: #222;
+  --cor-primaria: #2563eb;
+  --cor-secundaria: #93c5fd;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+[data-tema="escuro"] {
+  --cor-fundo: #0f172a;
+  --cor-card: #1e293b;
+  --cor-texto: #e2e8f0;
+  --sombra: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 240px;
+  background: var(--cor-card);
+  box-shadow: 2px 0 6px var(--sombra);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#sidebar h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--cor-primaria);
+}
+
+#sidebar nav button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--cor-texto);
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#sidebar nav button:hover {
+  background: var(--cor-secundaria);
+  color: #fff;
+}
+
+#sidebar nav button.ativo {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+/* Conteúdo */
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--cor-card);
+  box-shadow: 0 2px 6px var(--sombra);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+.card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.atualizacao {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Abas */
+.aba {
+  display: none;
+}
+.aba.ativa {
+  display: block;
+}
+
+#sidebar nav button.ativo {
+  background-color: #4CAF50;
+  color: white;
+}
