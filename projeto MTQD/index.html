@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -17,10 +18,10 @@
     <h2>🌎 Painel</h2>
     <nav>
       <button data-tab="dashboard" class="ativo"><i class="fa-solid fa-gauge"></i> Dashboard</button>
-      <button data-tab="sensores" class="ativo"><i class="fa-solid fa-microchip"></i> Sensores</button>
-      <button data-tab="mapa" class="ativo"><i class="fa-solid fa-map"></i> Mapa</button>
-      <button data-tab="alertas" class="ativo"><i class="fa-solid fa-bell"></i> Alertas</button>
-      <button id="toggle-tema" class="ativo"><i class="fa-solid fa-moon"></i> Tema</button>
+      <button data-tab="sensores"><i class="fa-solid fa-microchip"></i> Sensores</button>
+      <button data-tab="mapa"><i class="fa-solid fa-map"></i> Mapa</button>
+      <button data-tab="alertas"><i class="fa-solid fa-bell"></i> Alertas</button>
+      <button id="toggle-tema"><i class="fa-solid fa-moon"></i> Tema</button>
     </nav>
   </aside>
 
@@ -43,10 +44,22 @@
       <p>Listagem e status individual dos sensores.</p>
     </section>
 
-    <section id="mapa" class="aba" style="display:none">
-      <h1>Mapa Interativo</h1>
-
-    </section>
+   <section id="mapa" class="aba">
+  <h1>Mapa da Amazônia - Monitoramento Ambiental</h1>
+  <p>Mapa interativo com sensores distribuídos na região amazônica</p>
+  <div class="mapa-container">
+    <div id="mapa-interativo"></div>
+    <div class="controles-mapa">
+      <button id="localizar-usuario" class="btn-mapa">
+        <i class="fa-solid fa-location-crosshairs"></i> Minha Localização
+      </button>
+      <button id="limpar-marcadores" class="btn-mapa">
+        <i class="fa-solid fa-trash"></i> Limpar Marcadores
+      </button>
+      <span id="contador-marcadores">Sensores: 0</span>
+    </div>
+  </div>
+</section>
 
     <section id="alertas" class="aba">
       <h1>Alertas e Notificações</h1>
@@ -55,6 +68,8 @@
 
   </main>
 
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="assets/css/js/main.js"></script>
 </body>
 </html>

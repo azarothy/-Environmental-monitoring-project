@@ -126,3 +126,215 @@ h1 {
   background-color: #4CAF50;
   color: white;
 }
+/* ===== ESTILOS DO MAPA INTERATIVO ===== */
+
+.mapa-container {
+  position: relative;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px var(--sombra);
+  background: var(--cor-card);
+  padding: 0;
+}
+
+#mapa-interativo {
+  height: 500px;
+  width: 100%;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.controles-mapa {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--cor-card);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--sombra);
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--sombra);
+}
+
+.btn-mapa {
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-mapa:hover {
+  background: var(--cor-primaria);
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+#contador-marcadores {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto);
+  padding: 4px 8px;
+  background: var(--cor-secundaria);
+  border-radius: 4px;
+}
+
+/* Popup personalizado */
+.popup-mapa {
+  text-align: center;
+  min-width: 220px;
+  padding: 8px;
+}
+
+.popup-mapa h4 {
+  color: var(--cor-primaria);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.popup-mapa p {
+  color: var(--cor-texto);
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.btn-remover {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-remover:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Ajustes do Leaflet para o tema */
+.leaflet-container {
+  background: var(--cor-card);
+  font-family: "Inter", sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--cor-card);
+  color: var(--cor-texto);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+.leaflet-popup-tip {
+  background: var(--cor-card);
+}
+
+.leaflet-control-zoom a {
+  background: var(--cor-card) !important;
+  color: var(--cor-texto) !important;
+  border-bottom: 1px solid var(--sombra) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--cor-secundaria) !important;
+}
+
+.leaflet-control-attribution {
+  background: var(--cor-card) !important;
+  color: var(--cor-texto) !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--cor-primaria) !important;
+}
+
+/* Marcadores personalizados */
+.marcador-sensor {
+  filter: hue-rotate(180deg) brightness(1.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .mapa-container {
+    margin-top: 15px;
+  }
+  
+  #mapa-interativo {
+    height: 400px;
+  }
+  
+  .controles-mapa {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  
+  .btn-mapa {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Indicador de carregamento do mapa */
+.mapa-carregando {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background: var(--cor-card);
+  border-radius: 12px;
+  color: var(--cor-texto);
+  font-size: 16px;
+}
+
+/* Legenda do mapa (opcional) */
+.legenda-mapa {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--cor-card);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--sombra);
+  z-index: 1000;
+  font-size: 12px;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.legenda-cor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legenda-sensor { background: #2563eb; }
+.legenda-alerta { background: #dc3545; }
+.legenda-usuario { background: #28a745; }
