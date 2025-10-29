@@ -59,10 +59,4 @@ function atualizarDados() {
   document.getElementById("timestamp").innerText = new Date().toLocaleTimeString();
 }
 
-// --- Função: Inicializar o mapa (Google Maps) ---
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -23.5505, lng: -46.6333 }, // mapa de sp, trocar para o do amazonas
-    zoom: 12
-  });
-}
+// --- Função Map --- 
