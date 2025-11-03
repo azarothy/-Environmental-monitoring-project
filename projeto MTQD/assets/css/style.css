@@ -126,6 +126,7 @@ h1 {
   background-color: #4CAF50;
   color: white;
 }
+
 /* ===== ESTILOS DO MAPA INTERATIVO ===== */
 
 .mapa-container {
@@ -336,5 +337,5 @@ h1 {
 }
 
 .legenda-sensor { background: #2563eb; }
-.legenda-alerta { background: #dc3545; }
-.legenda-usuario { background: #28a745; }
+.legenda-alerta { background: #dc3546; }
+.legenda-usuario { background: #28a746; }
