@@ -5,9 +5,9 @@ import type { Sensor, FireDetection, Alert, SystemLog, User } from "./types"
 export const mockSensors: Sensor[] = [
   {
     id: "sensor-001",
-    name: "Sensor Floresta Norte",
-    location: "Zona Norte - Área Florestal",
-    coordinates: { lat: -15.7801, lng: -47.9292 },
+    name: "Sensor Altazes - Sudeste",
+    location: "Zona Sudeste - Área Florestal",
+    coordinates: { lat: -3.580278, lng: -59.131389 },
     status: "online",
     lastUpdate: new Date(),
     readings: {
@@ -19,9 +19,9 @@ export const mockSensors: Sensor[] = [
   },
   {
     id: "sensor-002",
-    name: "Sensor Cerrado Sul",
-    location: "Zona Sul - Cerrado",
-    coordinates: { lat: -15.8267, lng: -47.9218 },
+    name: "Sensor Iranduba - Sudoeste",
+    location: "Zona Sudoeste - Proxímo a cidade",
+    coordinates: { lat: -3.285000, lng: -60.185833 },
     status: "warning",
     lastUpdate: new Date(Date.now() - 120000),
     readings: {
@@ -33,9 +33,9 @@ export const mockSensors: Sensor[] = [
   },
   {
     id: "sensor-003",
-    name: "Sensor Parque Central",
-    location: "Centro - Parque Urbano",
-    coordinates: { lat: -15.7942, lng: -47.8822 },
+    name: "Sensor Humaitá - Sul",
+    location: "Zona Sul - Parque Central",
+    coordinates: { lat: -7.506111, lng: -63.020833 },
     status: "online",
     lastUpdate: new Date(),
     readings: {
@@ -47,9 +47,9 @@ export const mockSensors: Sensor[] = [
   },
   {
     id: "sensor-004",
-    name: "Sensor Reserva Leste",
-    location: "Zona Leste - Reserva Ambiental",
-    coordinates: { lat: -15.7698, lng: -47.8695 },
+    name: "Sensor Novo Aripuanã - Sul/Centro-Sul",
+    location: "Sul/Centro-Sul - Floresta",
+    coordinates: { lat: -5.119240, lng: -60.360373 },
     status: "online",
     lastUpdate: new Date(),
     readings: {
@@ -61,9 +61,9 @@ export const mockSensors: Sensor[] = [
   },
   {
     id: "sensor-005",
-    name: "Sensor Mata Oeste",
-    location: "Zona Oeste - Mata Nativa",
-    coordinates: { lat: -15.8156, lng: -47.9544 },
+    name: "Sensor Aldeia YUKURO - Sudoeste",
+    location: "Zona Sudoeste - Reserva Indigena",
+    coordinates: { lat: -3.210494, lng: -59.993809 },
     status: "offline",
     lastUpdate: new Date(Date.now() - 3600000),
     readings: {
@@ -79,8 +79,8 @@ export const mockFireDetections: FireDetection[] = [
   {
     id: "fire-001",
     sensorId: "sensor-002",
-    location: "Zona Sul - Cerrado",
-    coordinates: { lat: -15.8267, lng: -47.9218 },
+    location: "Sensor Iranduba - Zona Sudoeste - Proxímo a cidade",
+    coordinates: { lat: -3.285000, lng: -60.185833 },
     severity: "high",
     detectedAt: new Date(Date.now() - 300000),
     temperature: 42.8,
@@ -90,13 +90,13 @@ export const mockFireDetections: FireDetection[] = [
   {
     id: "fire-002",
     sensorId: "sensor-003",
-    location: "Centro - Parque Urbano",
-    coordinates: { lat: -15.7942, lng: -47.8822 },
+    location: "Sensor Humaitá - Sul",
+    coordinates: { lat: -7.506111, lng: -63.020833 },
     severity: "medium",
     detectedAt: new Date(Date.now() - 1800000),
     temperature: 38.5,
     area: 45,
-    status: "resolved",
+    status: "active",
   },
 ]
 
@@ -105,23 +105,23 @@ export const mockAlerts: Alert[] = [
     id: "alert-001",
     type: "fire",
     title: "Temperatura Crítica Detectada",
-    message: "Sensor Cerrado Sul registrou temperatura acima de 40°C",
+    message: "Sensor Sudoeste registrou temperatura acima de 40°C",
     severity: "high",
     timestamp: new Date(Date.now() - 300000),
     sensorId: "sensor-002",
-    location: "Zona Sul - Cerrado",
-    coordinates: { lat: -15.8267, lng: -47.9218 },
+    location: "Zona Sudoeste - Área Florestal",
+    coordinates: { lat: -3.580278, lng: -59.131389 },
     status: "active",
   },
   {
     id: "alert-002",
     type: "sensor",
-    title: "Sensor Offline",
-    message: "Sensor Mata Oeste não responde há mais de 1 hora",
+    title: "Temperatura Normal",
+    message: "Sensor Reserva Indigena não responde há 1 minuto",
     severity: "medium",
     timestamp: new Date(Date.now() - 3600000),
     sensorId: "sensor-005",
-    location: "Zona Oeste - Mata Nativa",
+    location: "Zona Sudoeste - Reserva Indigena",
     status: "active",
   },
   {
@@ -132,7 +132,7 @@ export const mockAlerts: Alert[] = [
     severity: "low",
     timestamp: new Date(Date.now() - 1800000),
     sensorId: "sensor-003",
-    location: "Centro - Parque Urbano",
+    location: "Zona Sudoeste - Proxímo a cidade",
     status: "resolved",
     resolvedAt: new Date(Date.now() - 900000),
   },
@@ -144,7 +144,7 @@ export const mockSystemLogs: SystemLog[] = [
     type: "warning",
     message: "Sensor X reconectado",
     timestamp: new Date(Date.now() - 120000),
-    details: "Sensor Cerrado Sul restabeleceu conexão após 2 minutos offline",
+    details: "Sensor Sudoeste restabeleceu conexão após 30 segundos offline",
   },
   {
     id: "log-002",
