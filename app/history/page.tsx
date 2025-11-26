@@ -155,15 +155,15 @@ export default function HistoryPage() {
                           <Badge variant="destructive">Crítico</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Temperatura de 45.2°C registrada no Sensor Cerrado Sul
+                          Temperatura de 45.2°C registrada no Sensor Sudoeste - Iranduba
                         </p>
                       </div>
                       <span className="text-xs text-muted-foreground whitespace-nowrap ml-4">Há 2 horas</span>
                     </div>
                     <div className="flex gap-4 text-xs text-muted-foreground">
-                      <span>Zona Sul - Cerrado</span>
+                      <span>Zona Sudoeste - Iranduba</span>
                       <span>•</span>
-                      <span>Resolvido em 45 minutos</span>
+                      <span>Resolvido em 30 minutos</span>
                     </div>
                   </div>
                 </div>
@@ -213,15 +213,15 @@ export default function HistoryPage() {
                           <Badge>Informativo</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Sensor Mata Oeste restabeleceu conexão após manutenção
+                          Sensor Mata Sudoeste restabeleceu conexão após manutenção
                         </p>
                       </div>
                       <span className="text-xs text-muted-foreground whitespace-nowrap ml-4">Há 8 horas</span>
                     </div>
                     <div className="flex gap-4 text-xs text-muted-foreground">
-                      <span>Zona Oeste - Mata Nativa</span>
+                      <span>Zona Sudoeste - Aldeia YUKURO</span>
                       <span>•</span>
-                      <span>Tempo offline: 45 minutos</span>
+                      <span>Tempo offline: 4 minutos</span>
                     </div>
                   </div>
                 </div>
